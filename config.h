@@ -50,21 +50,27 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 /* Lockfile */
 static char lockfile[] = "/tmp/dwm.lock";
 
+#define WTYPE "_NET_WM_WINDOW_TYPE_"
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
+	 *	_NET_WM_WINDOW_TYPE(ATOM) = wintype
 	 */
-	/* class      instance    title      tags mask  isfloating  isterminal  noswallow  monitor  isgame */
-	{ "Gimp",     NULL,       NULL,      0,         1,          -1 },
-	{ "firefox",  NULL,       NULL,      1 << 8,    0,          -1 },
-	{ "st",       NULL,       NULL,      0,         0,          1,          0,         -1 },
-{ "pavucontrol-qt" ,NULL,     NULL,      0,         0,          0,          0,         -1 },
-	{ NULL,       NULL, "Event Tester",  0,         0,          0,          1,         -1 }, /* xev */
-	{ "Steam",    NULL,       NULL,      0,         0,          -1,                             1 },
-	{ "steam_app", NULL,      NULL,      0,         0,          -1,                             1 },
-{ "amtrucks.exe", NULL,       NULL,      0,         0,          -1,                             1 },
-{ "falloutnv.exe", NULL,      NULL,      0,         0,          -1,                             1 },
+	/* class            instance    title      wintype,          tags mask  isfloating  isterminal  noswallow  monitor isgame */
+	{ NULL,             NULL,       NULL,      WTYPE "DIALOG",   0,         1,          -1 },
+	{ NULL,             NULL,       NULL,      WTYPE "UTILITY",  0,         1,          -1 },
+	{ NULL,             NULL,       NULL,      WTYPE "TOOLBAR",  0,         1,          -1 },
+	{ NULL,             NULL,       NULL,      WTYPE "SPLASH",   0,         1,          -1 },
+	{ "Gimp",           NULL,       NULL,      NULL,             0,         1,          -1 },
+    { "LibreWolf",      NULL,       NULL,      NULL,             1 << 8,    0,          -1 },
+	{ "st",             NULL,       NULL,                        0,         0,          1,           0,        -1 },
+	{ NULL,             NULL, "Event Tester",                    0,         0,          0,           1,        -1 }, /* xev */
+	{ "Steam",          NULL,       NULL,                        0,         0,                                 -1,      1 },
+	{ "steam_app",      NULL,       NULL,                        0,         0,                                 -1,      1 },
+    { "pavucontrol-qt", NULL,       NULL,      0,         0,     0,         0,         -1 },
+    { "amtrucks.exe",   NULL,       NULL,      0,         0,    -1,                                                     1 },
+    { "falloutnv.exe",  NULL,       NULL,      0,         0,    -1,                                                     1 },
 };
 
 /* layout(s) */

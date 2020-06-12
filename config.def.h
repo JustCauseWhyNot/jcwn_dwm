@@ -55,18 +55,24 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 /* Lockfile */
 static char lockfile[] = "/tmp/dwm.lock";
 
+#define WTYPE "_NET_WM_WINDOW_TYPE_"
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
+	 *	_NET_WM_WINDOW_TYPE(ATOM) = wintype
 	 */
-	/* class      instance    title      tags mask  isfloating  isterminal  noswallow  monitor  isgame */
-	{ "Gimp",     NULL,       NULL,      0,         1,                                 -1 },
-	{ "Firefox",  NULL,       NULL,      1 << 8,    0,                                 -1 },
-	{ "St",       NULL,       NULL,      0,         0,          1,           0,        -1 },
-	{ NULL,       NULL, "Event Tester",  0,         0,          0,           1,        -1 }, /* xev */
-	{ "Steam",    NULL,       NULL,      0,         0,                                 -1,      1 },
-	{ "steam_app",NULL,       NULL,      0,         0,                                 -1,      1 },
+	/* class            instance    title      wintype,          tags mask  isfloating  isterminal  noswallow  monitor isgame */
+	{ NULL,             NULL,       NULL,      WTYPE "DIALOG",   0,         1,          -1 },
+	{ NULL,             NULL,       NULL,      WTYPE "UTILITY",  0,         1,          -1 },
+	{ NULL,             NULL,       NULL,      WTYPE "TOOLBAR",  0,         1,          -1 },
+	{ NULL,             NULL,       NULL,      WTYPE "SPLASH",   0,         1,          -1 },
+	{ "Gimp",           NULL,       NULL,      NULL,             0,         1,          -1 },
+    { "LibreWolf",      NULL,       NULL,      NULL,             1 << 8,    0,          -1 },
+	{ "st",             NULL,       NULL,                        0,         0,          1,           0,        -1 },
+	{ NULL,             NULL, "Event Tester",                    0,         0,          0,           1,        -1 }, /* xev */
+	{ "Steam",          NULL,       NULL,                        0,         0,                                 -1,      1 },
+	{ "steam_app",      NULL,       NULL,                        0,         0,                                 -1,      1 },
 };
 
 /* layout(s) */
@@ -93,7 +99,7 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
-/* commands */
+/* commands *
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
