@@ -9,10 +9,10 @@ static const char *fonts[]          = { "sans-serif:size=10" };
 static const char dmenufont[]       = "sans-serif:size=10";
 /* colors */
 static const char col_black[]       = "#000000";
-static const char col_red[]         = "#FFFF00";
+static const char col_red[]         = "#FF0000";
 static const char col_green[]       = "#00FF00";
 static const char col_yellow[]      = "#FFFF00";
-static const char col_white[]       = "#000000";
+static const char col_white[]       = "#FFFFFF";
 static const char *colors[][3]      = {
     /*                      fg         bg        border   */
     [SchemeNorm]    = { col_white,  col_black,  col_red   },
@@ -58,7 +58,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_black, "-sb", col_green, "-sf", col_white, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_white, "-sb", col_black, "-sf", col_green, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
