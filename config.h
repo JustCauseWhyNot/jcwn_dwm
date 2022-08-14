@@ -17,7 +17,23 @@ static const char *colors[][3]      = {
     /*                      fg         bg        border   */
     [SchemeNorm]    = { col_white,  col_black,  col_red   },
     [SchemeSel]     = { col_white,  col_black,  col_green },
+	[SchemeStatus]  = { col_white,  col_black,  NULL  },
 };
+
+
+/* status bar */
+static const Block blocks[] = {
+	/* fg     command				interval	signal */
+	{ col_white, "sb-clock",			1,		1},
+};
+
+/* inverse the order of the blocks, comment to disable */
+#define INVERSED	1
+/* delimeter between blocks commands. NULL character ('\0') means no delimeter. */
+static char delimiter[] = " ";
+/* max number of character that one block command can output */
+#define CMDLENGTH	50
+
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -110,7 +126,14 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+
+	{ ClkStatusText,        0,              Button1,        sendstatusbar,   {.i = 1 } },
+	{ ClkStatusText,        0,              Button2,        sendstatusbar,   {.i = 2 } },
+	{ ClkStatusText,        0,              Button3,        sendstatusbar,   {.i = 3 } },
+	{ ClkStatusText,        0,              Button4,        sendstatusbar,   {.i = 4 } },
+	{ ClkStatusText,        0,              Button5,        sendstatusbar,   {.i = 5 } },
+	{ ClkStatusText,        ShiftMask,      Button1,        sendstatusbar,   {.i = 6 } },
+
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
