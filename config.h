@@ -82,13 +82,13 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *layoutmenu_cmd = "layoutmenu.sh";
 static const char *prtscrcmd[] = { "flameshot", "gui", NULL};
+static const char *roficmd[] = { "/home/justcausewhynot/.config/rofi/scripts/launcher_t1" };
 
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_p,      spawn,          SHCMD("rofi -show combi") },
-	{ MODKEY,                       XK_c,      spawn,          SHCMD("rofi -show calc") },
+	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
 	{ 0,                            XK_Print,  spawn,          {.v = prtscrcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
