@@ -84,11 +84,15 @@ static const char *prtscrcmd[] = { "flameshot", "gui", NULL};
 static const char *roficmd[] = { "/home/justcausewhynot/.config/rofi/scripts/launcher_t1" };
 
 #include "movestack.c"
+#include <X11/XF86keysym.h>
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
 	{ 0,                            XK_Print,  spawn,          {.v = prtscrcmd } },
+	{ 0,                     XF86XK_AudioPlay, spawn,          SHCMD("playerctl play-pause") },
+	{ 0,                     XF86XK_AudioPrev, spawn,          SHCMD("playerctl previous") },
+	{ 0,                     XF86XK_AudioNext, spawn,          SHCMD("playerctl next") },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
