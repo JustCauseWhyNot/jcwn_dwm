@@ -82,6 +82,9 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *layoutmenu_cmd = "layoutmenu.sh";
 static const char *prtscrcmd[] = { "flameshot", "gui", NULL};
 static const char *roficmd[] = { "/home/justcausewhynot/.config/rofi/scripts/launcher_t1" };
+static const char *play_pausecmd[] = { "playerctl", "play-pause", NULL };
+static const char *previouscmd[] = { "playerctl", "previous", NULL };
+static const char *nextcmd[] = { "playerctl", "next", NULL };
 
 #include "movestack.c"
 #include <X11/XF86keysym.h>
@@ -90,9 +93,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
 	{ 0,                            XK_Print,  spawn,          {.v = prtscrcmd } },
-	{ 0,                     XF86XK_AudioPlay, spawn,          SHCMD("playerctl play-pause") },
-	{ 0,                     XF86XK_AudioPrev, spawn,          SHCMD("playerctl previous") },
-	{ 0,                     XF86XK_AudioNext, spawn,          SHCMD("playerctl next") },
+	{ 0,                     XF86XK_AudioPlay, spawn,          {.v = play_pausecmd } },
+	{ 0,                     XF86XK_AudioPrev, spawn,          {.v = previouscmd } },
+	{ 0,                     XF86XK_AudioNext, spawn,          {.v = nextcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
