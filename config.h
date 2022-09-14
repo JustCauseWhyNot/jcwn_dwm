@@ -17,7 +17,7 @@ static const char *colors[][3]      = {
     /*                      fg         bg        border   */
     [SchemeNorm]    = { col_white,  col_black,  col_red   },
     [SchemeSel]     = { col_white,  col_black,  col_green },
-	[SchemeStatus]  = { col_white,  col_black,  NULL  },
+    [SchemeStatus]  = { col_white,  col_black,  NULL  },
 };
 
 
