@@ -51,6 +51,7 @@ static const Rule rules[] = {
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Steam",    NULL,       NULL,       0,            0,           -1,      1 },
 	{ "steam_app",NULL,       NULL,       0,            0,           -1,      1 },
+{ "falloutnv.exe",NULL,       NULL,       0,            0,           -1,      1 },
 };
 
 /* layout(s) */
