@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# Signal 2
+# Prints the current volume or 🔇 if muted.
+# dependencies: pamixer
+case $BLOCK_BUTTON in
+	1) pamixer -t ;;
+	2) setsid -f "$TERMINAL" -e pulsemixer ;;
+	3) notify-send "Volume module" "\- Shows volume 🔊, 🔇 if muted.
+- Left click to mute.
+- Middle click opens pulsemixer.
+- Scroll to change." ;;
+	4) pamixer --allow-boost -i 5 ;;
+	5) pamixer --allow-boost -d 5 ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+[ $(pamixer --get-mute) = true ] && echo '🔇' && exit
+
+icon="🔉"
+vol="$(pamixer --get-volume)"
+
+if [ "$vol" -gt "70" ]; then
+	icon="🔊"
+elif [ "$vol" -lt "20" ]; then
+	icon="🔈"
+fi
+
+echo "$icon$vol%"
