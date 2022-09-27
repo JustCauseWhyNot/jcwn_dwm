@@ -25,6 +25,11 @@ static const char *colors[][3]      = {
 static const Block blocks[] = {
 	/* fg     command				interval	signal */
 	{ col_white, "sb-clock",			1,		1},
+	{ col_white, "sb-volume",			0,		2},
+	{ col_white, "sb-memory",			1,		3},
+	{ col_white, "sb-cpu",				1,		4},
+	{ col_white, "sb-cpubars",			1,		5},
+	{ col_white, "sb-doppler",			1,		6},
 };
 
 /* inverse the order of the blocks, comment to disable */
