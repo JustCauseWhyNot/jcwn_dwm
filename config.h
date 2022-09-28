@@ -5,7 +5,12 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "sans-serif:size=10" };
+static const char *fonts[] = {
+		"sans-serif:size=10:antialias=true:autohint=true",
+		"Font Awesome 6 Brands=10:antialias=true:autohint=true",
+		"OpenMoji=10:antialais=true:autohint=true",
+		"Material Design Icons Desktop=20:antialais=true:autohint=true",
+};
 static const char dmenufont[]       = "sans-serif:size=10";
 /* colors */
 static const char col_black[]       = "#000000";
@@ -27,15 +32,15 @@ static const Block blocks[] = {
 	{ col_white, "sb-clock",			1,		1},
 	{ col_white, "sb-volume",			0,		2},
 	{ col_white, "sb-memory",			1,		3},
-	{ col_white, "sb-cpu",				1,		4},
-	{ col_white, "sb-cpubars",			1,		5},
-	{ col_white, "sb-doppler",			1,		6},
+/*	{ col_white, "sb-cpu",		 		1,		4},*/
+/*	{ col_white, "sb-cpubars",			1,		5},*/
+/*	{ col_white, "sb-doppler",			0,		6},*/
 };
 
 /* inverse the order of the blocks, comment to disable */
 #define INVERSED	1
 /* delimeter between blocks commands. NULL character ('\0') means no delimeter. */
-static char delimiter[] = " ";
+static char delimiter[] = " | ";
 /* max number of character that one block command can output */
 #define CMDLENGTH	50
 
