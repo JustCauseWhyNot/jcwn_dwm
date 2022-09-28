@@ -42,4 +42,5 @@ echo "$stats" | while read -r row; do
 		"8") printf "█";;
 	esac
 done; printf "\\n"
+
 echo "$stats" > "$cache"
