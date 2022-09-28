@@ -98,6 +98,7 @@ static const char *roficmd[] = { "/home/justcausewhynot/.config/rofi/scripts/lau
 static const char *play_pausecmd[] = { "playerctl", "play-pause", NULL };
 static const char *previouscmd[] = { "playerctl", "previous", NULL };
 static const char *nextcmd[] = { "playerctl", "next", NULL };
+static const char *sxcs[]= { "sxc", NULL };
 
 #include "movestack.c"
 #include <X11/XF86keysym.h>
