@@ -58,7 +58,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor  isgame */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "librewolf",NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Steam",    NULL,       NULL,       0,            0,           -1,      1 },
 	{ "steam_app",NULL,       NULL,       0,            0,           -1,      1 },
 { "falloutnv.exe",NULL,       NULL,       0,            0,           -1,      1 },
