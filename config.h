@@ -6,7 +6,7 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[] = {
-		"sans-serif:size=10:antialias=true:autohint=true",
+		"sans-serif:size=12:antialias=true:autohint=true",
 		"Font Awesome 6 Brands=10:antialias=true:autohint=true",
 		"OpenMoji=10:antialais=true:autohint=true",
 		"Material Design Icons Desktop=20:antialais=true:autohint=true",
