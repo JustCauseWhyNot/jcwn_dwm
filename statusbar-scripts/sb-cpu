@@ -1,4 +1,0 @@
-#!/bin/sh
-# Signal 4
-
-print date
