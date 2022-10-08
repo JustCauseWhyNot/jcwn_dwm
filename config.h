@@ -33,8 +33,7 @@ static const Block blocks[] = {
 	{ col_white, "sb-clock",			1,		1},
 	{ col_white, "sb-volume",			0,		2},
 	{ col_white, "sb-memory",			1,		3},
-	{ col_white, "sb-cpu-usage",		1,		4},
-	{ col_white, "sb-cpu-temp",		 	1,		5},
+	{ col_white, "sb-cpu",		 		1,		4},
 /*	{ col_white, "sb-doppler",			0,		6},*/
 };
 
