@@ -31,7 +31,7 @@ static const char *colors[][3]      = {
 static const Block blocks[] = {
 	/* fg     command				interval	signal */
 	{ col_white, "sb-clock",			1,		1},
-	{ col_white, "sb-volume",			0,		2},
+	{ col_white, "sb-volume",			1,		2},
 	{ col_white, "sb-memory",			1,		3},
 	{ col_white, "sb-cpu",		 		1,		4},
 /*	{ col_white, "sb-doppler",			0,		6},*/
@@ -59,8 +59,8 @@ static const Rule rules[] = {
 	/* class      instance    title      tags mask  isfloating  isterminal  noswallow  monitor  isgame */
 	{ "Gimp",     NULL,       NULL,      0,         1,          -1 },
 	{ "firefox",  NULL,       NULL,      1 << 8,    0,          -1 },
-	{ "St",       NULL,       NULL,      0,         0,          1,          0,        -1 },
-	{ NULL,       NULL, "Event Tester",  0,         0,          0,          1,        -1 }, /* xev */
+	{ "St",       NULL,       NULL,      0,         0,          1,          0,         -1 },
+	{ NULL,       NULL, "Event Tester",  0,         0,          0,          1,         -1 }, /* xev */
 	{ "Steam",    NULL,       NULL,       0,        0,          -1,                             1 },
 	{ "steam_app",NULL,       NULL,       0,        0,          -1,                             1 },
 { "falloutnv.exe",NULL,       NULL,       0,        0,          -1,                             1 },
