@@ -100,6 +100,8 @@ static const char *roficmd[] = { "/home/justcausewhynot/.config/rofi/scripts/lau
 static const char *play_pausecmd[] = { "playerctl", "play-pause", NULL };
 static const char *previouscmd[] = { "playerctl", "previous", NULL };
 static const char *nextcmd[] = { "playerctl", "next", NULL };
+static const char *shiftplayercmd[] = { "playerctld", "shift", NULL };
+static const char *unshiftplayercmd[] = { "playerctld", "unshift", NULL };
 static const char *sxcs[]= { "sxc", NULL };
 
 #include "movestack.c"
@@ -109,6 +111,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
 	{ 0,                            XK_Print,  spawn,          {.v = prtscrcmd } },
+	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = shiftplayercmd } },
+	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = unshiftplayercmd } },
 	{ 0,                     XF86XK_AudioPlay, spawn,          {.v = play_pausecmd } },
 	{ 0,                     XF86XK_AudioPrev, spawn,          {.v = previouscmd } },
 	{ 0,                     XF86XK_AudioNext, spawn,          {.v = nextcmd } },
