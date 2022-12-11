@@ -7,12 +7,11 @@ static const int swallowfloating    = 0;        /* 1 means swallow floating wind
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[] = {
-		"sans-serif:size=12:antialias=true:autohint=true",
-		"Font Awesome 6 Brands=10:antialias=true:autohint=true",
-		"OpenMoji=10:antialais=true:autohint=true",
-		"Material Design Icons Desktop=20:antialais=true:autohint=true",
+		"sans-serif:size=12:hinting=true:antialias=true:autohint=false:hintstyle=hintnone:rgba=rgb:lcdfilter=lcdefault:fontformat=ttf",
+		"OpenMoji:size=12:hinting=true:antialias=true:autohint=false:hintstyle=hintfull:rgba=rgb:lcdfilter=lcdefault:fontformat=ttf"
+		"Material Design Icons Desktop:size=12:hinting=true:antialias=true:autohint=false:hintstyle=hintfull:rgba=rgb:lcdfilter=lcdefault:fontformat=ttf"
 };
-static const char dmenufont[]       = "sans-serif:size=10";
+static const char dmenufont[]       = "sans-serif:size=12:hinting=true:antialias=true:autohint=false:hintstyle=hintnone:rgba=rgb:lcdfilter=lcdefault:fontformat=ttf";
 /* colors */
 static const char col_black[]       = "#000000";
 static const char col_red[]         = "#FF0000";
