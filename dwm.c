@@ -2049,8 +2049,6 @@ setup(void)
 	Atom utf8string;
 	struct sigaction sa;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 	/* do not transform children into zombies when they terminate */
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = SA_NOCLDSTOP | SA_NOCLDWAIT | SA_RESTART;
@@ -2059,14 +2057,8 @@ setup(void)
 
 	/* clean up any zombies (inherited from .xinitrc etc) immediately */
 	while (waitpid(-1, NULL, WNOHANG) > 0);
-||||||| parent of 4df13d2 (Allows dwm to handle the text by itself. You can think of it like a dwmblocks integration into dwm itself. This is extracted from my dwm build[0] in which you can find even more information.)
 	/* clean up any zombies immediately */
 	sigchld(0);
-=======
-||||||| parent of 92e22f7 (Use sigaction(SA_NOCLDWAIT) for SIGCHLD handling)
-=======
-<<<<<<< HEAD
->>>>>>> 92e22f7 (Use sigaction(SA_NOCLDWAIT) for SIGCHLD handling)
 	setsignal(SIGCHLD, sigchld); /* zombies */
 	setsignal(SIGALRM, sigalrm); /* timer */
 
@@ -2081,14 +2073,8 @@ setup(void)
 	char envpid[16];
 	snprintf(envpid, LENGTH(envpid), "%d", getpid());
 	setenv("STATUSBAR", envpid, 1);
-<<<<<<< HEAD
->>>>>>> 4df13d2 (Allows dwm to handle the text by itself. You can think of it like a dwmblocks integration into dwm itself. This is extracted from my dwm build[0] in which you can find even more information.)
-||||||| parent of 92e22f7 (Use sigaction(SA_NOCLDWAIT) for SIGCHLD handling)
-=======
-||||||| parent of 712d663 (Use sigaction(SA_NOCLDWAIT) for SIGCHLD handling)
 	/* clean up any zombies immediately */
 	sigchld(0);
-=======
 	/* do not transform children into zombies when they terminate */
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = SA_NOCLDSTOP | SA_NOCLDWAIT | SA_RESTART;
@@ -2097,8 +2083,6 @@ setup(void)
 
 	/* clean up any zombies (inherited from .xinitrc etc) immediately */
 	while (waitpid(-1, NULL, WNOHANG) > 0);
->>>>>>> 712d663 (Use sigaction(SA_NOCLDWAIT) for SIGCHLD handling)
->>>>>>> 92e22f7 (Use sigaction(SA_NOCLDWAIT) for SIGCHLD handling)
 
 	/* init screen */
 	screen = DefaultScreen(dpy);
@@ -2218,24 +2202,10 @@ sigalrm(int unused)
 }
 
 void
-<<<<<<< HEAD
-<<<<<<< HEAD
-||||||| parent of 4df13d2 (Allows dwm to handle the text by itself. You can think of it like a dwmblocks integration into dwm itself. This is extracted from my dwm build[0] in which you can find even more information.)
 sigchld(int unused)
 {
 	if (signal(SIGCHLD, sigchld) == SIG_ERR)
 		die("can't install SIGCHLD handler:");
-	while (0 < waitpid(-1, NULL, WNOHANG));
-}
-
-void
-=======
-||||||| parent of 92e22f7 (Use sigaction(SA_NOCLDWAIT) for SIGCHLD handling)
-=======
-<<<<<<< HEAD
->>>>>>> 92e22f7 (Use sigaction(SA_NOCLDWAIT) for SIGCHLD handling)
-sigchld(int unused)
-{
 	while (0 < waitpid(-1, NULL, WNOHANG));
 }
 
@@ -2249,22 +2219,6 @@ solitary(Client *c)
 }
 
 void
-<<<<<<< HEAD
->>>>>>> 4df13d2 (Allows dwm to handle the text by itself. You can think of it like a dwmblocks integration into dwm itself. This is extracted from my dwm build[0] in which you can find even more information.)
-||||||| parent of 92e22f7 (Use sigaction(SA_NOCLDWAIT) for SIGCHLD handling)
-=======
-||||||| parent of 712d663 (Use sigaction(SA_NOCLDWAIT) for SIGCHLD handling)
-sigchld(int unused)
-{
-	if (signal(SIGCHLD, sigchld) == SIG_ERR)
-		die("can't install SIGCHLD handler:");
-	while (0 < waitpid(-1, NULL, WNOHANG));
-}
-
-void
-=======
->>>>>>> 712d663 (Use sigaction(SA_NOCLDWAIT) for SIGCHLD handling)
->>>>>>> 92e22f7 (Use sigaction(SA_NOCLDWAIT) for SIGCHLD handling)
 spawn(const Arg *arg)
 {
 	if (arg->v == dmenucmd)
