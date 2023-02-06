@@ -214,8 +214,13 @@ static void grabkeys(void);
 static void incnmaster(const Arg *arg);
 static void keypress(XEvent *e);
 static void killclient(const Arg *arg);
+<<<<<<< HEAD
 static void losefullscreen(Client *next);
 static void layoutmenu(const Arg *arg);
+||||||| bf08d60 (Right clicking the layout symbol opens an xmenu prompt to select layout.)
+static void layoutmenu(const Arg *arg);
+=======
+>>>>>>> parent of bf08d60 (Right clicking the layout symbol opens an xmenu prompt to select layout.)
 static void manage(Window w, XWindowAttributes *wa);
 static void mappingnotify(XEvent *e);
 static void maprequest(XEvent *e);
@@ -1292,6 +1297,7 @@ killclient(const Arg *arg)
 }
 
 void
+<<<<<<< HEAD
 losefullscreen(Client *next)
 {
 	Client *sel = selmon->sel;
@@ -1320,6 +1326,27 @@ layoutmenu(const Arg *arg) {
 }
 
 void
+||||||| bf08d60 (Right clicking the layout symbol opens an xmenu prompt to select layout.)
+layoutmenu(const Arg *arg) {
+	FILE *p;
+	char c[3], *s;
+	int i;
+
+	if (!(p = popen(layoutmenu_cmd, "r")))
+		 return;
+	s = fgets(c, sizeof(c), p);
+	pclose(p);
+
+	if (!s || *s == '\0' || c == '\0')
+		 return;
+
+	i = atoi(c);
+	setlayout(&((Arg) { .v = &layouts[i] }));
+}
+
+void
+=======
+>>>>>>> parent of bf08d60 (Right clicking the layout symbol opens an xmenu prompt to select layout.)
 manage(Window w, XWindowAttributes *wa)
 {
 	Client *c, *t = NULL, *term = NULL;
