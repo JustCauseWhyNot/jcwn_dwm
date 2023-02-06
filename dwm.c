@@ -214,7 +214,6 @@ static void grabkeys(void);
 static void incnmaster(const Arg *arg);
 static void keypress(XEvent *e);
 static void killclient(const Arg *arg);
-static void losefullscreen(Client *next);
 static void manage(Window w, XWindowAttributes *wa);
 static void mappingnotify(XEvent *e);
 static void maprequest(XEvent *e);
@@ -945,7 +944,6 @@ focus(Client *c)
 	if (!c || !ISVISIBLE(c))
 		for (c = selmon->stack; c && !ISVISIBLE(c); c = c->snext);
 	if (selmon->sel && selmon->sel != c) {
-		losefullscreen(c);
 		unfocus(selmon->sel, 0);
 	}
 	if (c) {
@@ -1291,17 +1289,6 @@ killclient(const Arg *arg)
 }
 
 void
-losefullscreen(Client *next)
-{
-	Client *sel = selmon->sel;
-	if (!sel || !next)
-		return;
-	if (sel->isfullscreen && sel->fakefullscreen != 1 && ISVISIBLE(sel) && sel->mon == next->mon && !next->isfloating)
-		setfullscreen(sel, 0);
-}
-
-
-void
 manage(Window w, XWindowAttributes *wa)
 {
 	Client *c, *t = NULL, *term = NULL;
@@ -1357,7 +1344,6 @@ manage(Window w, XWindowAttributes *wa)
 	XMoveResizeWindow(dpy, c->win, c->x + 2 * sw, c->y, c->w, c->h); /* some windows require this */
 	setclientstate(c, NormalState);
 	if (c->mon == selmon) {
-		losefullscreen(c);
 		unfocus(selmon->sel, 0);
 	}
 	c->mon->sel = c;
