@@ -93,7 +93,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_white, "-sb", col_black, "-sf", col_green, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *layoutmenu_cmd = "layoutmenu.sh";
 static const char *prtscrcmd[] = { "flameshot", "gui", NULL};
 static const char *roficmd[] = { "/home/justcausewhynot/.config/rofi/scripts/launcher_t1" };
 static const char *play_pausecmd[] = { "playerctl", "play-pause", NULL };
@@ -163,7 +162,6 @@ static const Key keys[] = {
 static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
-	{ ClkLtSymbol,          0,              Button3,        layoutmenu,     {0} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 
 	{ ClkStatusText,        0,              Button1,        sendstatusbar,   {.i = 1 } },
