@@ -62,8 +62,8 @@ static const Rule rules[] = {
 	{ NULL,       NULL, "Event Tester",  0,         0,          0,          1,         -1 }, /* xev */
 	{ "Steam",    NULL,       NULL,      0,         0,          -1,                             1 },
 	{ "steam_app",NULL,       NULL,      0,         0,          -1,                             1 },
-{ "falloutnv.exe",NULL,       NULL,      0,         0,          -1,                             1 },
 { "amtrucks.exe", NULL,       NULL,      0,         0,          -1,                             1 },
+{ "falloutnv.exe",NULL,       NULL,      0,         0,          -1,                             1 },
 };
 
 /* layout(s) */
