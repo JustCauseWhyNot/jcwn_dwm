@@ -1355,8 +1355,9 @@ manage(Window w, XWindowAttributes *wa)
 	XConfigureWindow(dpy, w, CWBorderWidth, &wc);
 	XSetWindowBorder(dpy, w, scheme[SchemeNorm][ColBorder].pixel);
 	configure(c); /* propagates border_width, if size doesn't change */
-	updatewindowtype(c);
 	applyrules(c);
+	if (getatomprop(c, netatom[NetWMState]) == netatom[NetWMFullscreen])
+		setfullscreen(c, 1);
 	updatesizehints(c);
 	updatewmhints(c);
 	updatemotifhints(c);
@@ -1580,8 +1581,6 @@ propertynotify(XEvent *e)
 			if (c == c->mon->sel)
 				drawbar(c->mon);
 		}
-		if (ev->atom == netatom[NetWMWindowType])
-			updatewindowtype(c);
 		if (ev->atom == motifatom)
 			updatemotifhints(c);
 	}
@@ -2105,7 +2104,6 @@ setup(void)
 	netatom[NetWMCheck] = XInternAtom(dpy, "_NET_SUPPORTING_WM_CHECK", False);
 	netatom[NetWMFullscreen] = XInternAtom(dpy, "_NET_WM_STATE_FULLSCREEN", False);
 	netatom[NetWMWindowType] = XInternAtom(dpy, "_NET_WM_WINDOW_TYPE", False);
-	netatom[NetWMWindowTypeDialog] = XInternAtom(dpy, "_NET_WM_WINDOW_TYPE_DIALOG", False);
 	netatom[NetClientList] = XInternAtom(dpy, "_NET_CLIENT_LIST", False);
 	motifatom = XInternAtom(dpy, "_MOTIF_WM_HINTS", False);
 	/* init cursors */

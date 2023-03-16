@@ -64,11 +64,11 @@ static const Rule rules[] = {
 	{ NULL,             NULL,       NULL,      WTYPE "SPLASH",   0,         1,          -1 },
 	{ "Gimp",           NULL,       NULL,      NULL,             0,         1,          -1 },
     { "LibreWolf",      NULL,       NULL,      NULL,             1 << 8,    0,          -1 },
-	{ "st",             NULL,       NULL,                        0,         0,          1,           0,        -1 },
-	{ NULL,             NULL, "Event Tester",                    0,         0,          0,           1,        -1 }, /* xev */
+    { "pavucontrol-qt", NULL,       NULL,      NULL,             0,         0,          0,          -1 },
+	{ "st",             NULL,       NULL,                        0,         0,          1,          0,         -1 },
+	{ NULL,             NULL, "Event Tester",                    0,         0,          0,          1,         -1 }, /* xev */
 	{ "Steam",          NULL,       NULL,                        0,         0,                                 -1,      1 },
 	{ "steam_app",      NULL,       NULL,                        0,         0,                                 -1,      1 },
-    { "pavucontrol-qt", NULL,       NULL,      0,         0,     0,         0,         -1 },
     { "amtrucks.exe",   NULL,       NULL,      0,         0,    -1,                                                     1 },
     { "falloutnv.exe",  NULL,       NULL,      0,         0,    -1,                                                     1 },
 };
