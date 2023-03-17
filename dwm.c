@@ -258,7 +258,6 @@ static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
 static void tile(Monitor *m);
 static void togglebar(const Arg *arg);
-static void togglefakefullscreen(const Arg *arg);
 static void togglefloating(const Arg *arg);
 static void togglefullscr(const Arg *arg);
 static void toggletag(const Arg *arg);
@@ -2294,25 +2293,6 @@ togglebar(const Arg *arg)
 }
 
 void
-togglefakefullscreen(const Arg *arg)
-{
-	Client *c = selmon->sel;
-	if (!c)
-		return;
-
-	if (c->fakefullscreen != 1 && c->isfullscreen) { // exit fullscreen --> fake fullscreen
-		c->fakefullscreen = 2;
-		setfullscreen(c, 0);
-	} else if (c->fakefullscreen == 1) {
-		setfullscreen(c, 0);
-		c->fakefullscreen = 0;
-	} else {
-		c->fakefullscreen = 1;
-		setfullscreen(c, 1);
-	}
-}
-
-void
 togglefloating(const Arg *arg)
 {
 	Client *c = selmon->sel;
@@ -2324,20 +2304,6 @@ togglefloating(const Arg *arg)
 	if (selmon->sel->isfloating)
 		resize(c, c->x, c->y, c->w, c->h, 0);
 	arrange(c->mon);
-}
-
-void
-togglefullscreen(const Arg *arg)
-{
-	Client *c = selmon->sel;
-	if (!c)
-		return;
-
-	if (c->fakefullscreen == 1) { // fake fullscreen --> fullscreen
-		c->fakefullscreen = 2;
-		setfullscreen(c, 1);
-	} else
-		setfullscreen(c, !c->isfullscreen);
 }
 
 void
