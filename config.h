@@ -58,19 +58,19 @@ static const Rule rules[] = {
 	 *	_NET_WM_WINDOW_TYPE(ATOM) = wintype
 	 */
 	/* class            instance    title      wintype,          tags mask  isfloating  isterminal  noswallow  monitor isgame */
-	{ NULL,             NULL,       NULL,      WTYPE "DIALOG",   0,         0,          -1 },
-	{ NULL,             NULL,       NULL,      WTYPE "UTILITY",  0,         0,          -1 },
-	{ NULL,             NULL,       NULL,      WTYPE "TOOLBAR",  0,         0,          -1 },
-	{ NULL,             NULL,       NULL,      WTYPE "SPLASH",   0,         0,          -1 },
-	{ NULL,             NULL, "Event Tester",                    0,         0,          0,          1,         -1 }, /* xev */
-	{ "Gimp",           NULL,       NULL,      NULL,             0,         0,          -1 },
-    { "LibreWolf",      NULL,       NULL,      NULL,             1 << 8,    0,          -1 },
-    { "pavucontrol-qt", NULL,       NULL,      WTYPE "DIALOG",   0,         0,          0 },
-	{ "st-direct",      NULL,       NULL,                        0,         0,          1,          0,         -1 },
-	{ "Steam",          NULL,       NULL,                        0,         0,                                 -1,      1 },
-	{ "steam_app",      NULL,       NULL,                        0,         0,                                 -1,      1 },
-    { "amtrucks.exe",   NULL,       NULL,      0,                0,         -1,                                         1 },
-    { "falloutnv.exe",  NULL,       NULL,      0,                0,         -1,                                         1 },
+	{ NULL,             NULL,       NULL,      WTYPE "DIALOG",   0,         0,          -1,         0,         -1,      0 },
+	{ NULL,             NULL,       NULL,      WTYPE "UTILITY",  0,         0,          -1,         0,         -1,      0 },
+	{ NULL,             NULL,       NULL,      WTYPE "TOOLBAR",  0,         0,          -1,         0,         -1,      0 },
+	{ NULL,             NULL,       NULL,      WTYPE "SPLASH",   0,         0,          -1,         0,         -1,      0 },
+	{ NULL,             NULL, "Event Tester",  NULL,             0,         0,          0,          1,         -1,      0 }, /* xev */
+	{ "Gimp",           NULL,       NULL,      NULL,             0,         0,          -1,         0,         -1,      0 },
+    { "LibreWolf",      NULL,       NULL,      NULL,             0,         0,          -1,         0,         -1,      0 },
+	{ "st-direct",      NULL,       NULL,      NULL,             0,         0,          1,          0,         -1,      0 },
+	{ "Steam",          NULL,       NULL,      NULL,             0,         0,          0,          0,         -1,      1 },
+	{ "steam_app",      NULL,       NULL,      NULL,             0,         0,          0,          0,         -1,      1 },
+    { "pavucontrol-qt", NULL,       NULL,      NULL,             0,         0,          0,          0,         -1,      0 },
+    { "amtrucks.exe",   NULL,       NULL,      NULL,             0,         -1,         0,          0,         -1,      1 },
+    { "falloutnv.exe",  NULL,       NULL,      NULL,             0,         -1,         0,          0,         -1,      1 },
 };
 
 /* layout(s) */
