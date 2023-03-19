@@ -68,7 +68,7 @@ static const Rule rules[] = {
 	{ "st-direct",      NULL,       NULL,      NULL,             0,         0,          1,          0,         -1,      0 },
 	{ "Steam",          NULL,       NULL,      NULL,             0,         0,          0,          0,         -1,      1 },
 	{ "steam_app",      NULL,       NULL,      NULL,             0,         0,          0,          0,         -1,      1 },
-	{ "pavucontrol-qt",             NULL,      WTYPE "DIALOG",   0,         0,          -1,         0,         -1,      0 },
+	{ "pavucontrol-qt", NULL,       NULL,      WTYPE "DIALOG",   0,         0,          -1,         0,         -1,      0 },
     { "amtrucks.exe",   NULL,       NULL,      NULL,             0,         -1,         0,          0,         -1,      1 },
     { "falloutnv.exe",  NULL,       NULL,      NULL,             0,         -1,         0,          0,         -1,      1 },
 };
