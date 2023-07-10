@@ -132,7 +132,6 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_z,      spawn,          {.v = ffcmd } },
 	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = rrcmd } },
 	{ 0,                     XF86XK_AudioPlay, spawn,          {.v = play_pausecmd } },
-	{ 0,                            XK_space,  spawn,          {.v = play_pausecmd } },
 	{ 0,                     XF86XK_AudioPrev, spawn,          {.v = previouscmd } },
 	{ 0,                     XF86XK_AudioNext, spawn,          {.v = nextcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
