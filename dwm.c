@@ -218,6 +218,7 @@ static void grabkeys(void);
 static void incnmaster(const Arg *arg);
 static void keypress(XEvent *e);
 static void killclient(const Arg *arg);
+static void killrecursive(pid_t parent_pid);
 static void manage(Window w, XWindowAttributes *wa);
 static void mappingnotify(XEvent *e);
 static void maprequest(XEvent *e);
@@ -258,6 +259,7 @@ static void spawn(const Arg *arg);
 static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
 static void tile(Monitor *m);
+static void termclient(const Arg *arg);
 static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
 static void togglefullscr(const Arg *arg);
@@ -2276,6 +2278,46 @@ tagmon(const Arg *arg)
 		}
 	} else
 		sendmon(c, dirtomon(arg->i));
+}
+
+void
+termclient(const Arg *arg)
+{
+    if (!selmon->sel)
+        return;
+
+    XEvent ev;
+    ev.type = ClientMessage;
+    ev.xclient.window = selmon->sel->win;
+    ev.xclient.message_type = XInternAtom(dpy, "WM_PROTOCOLS", False);
+    ev.xclient.format = 32;
+    ev.xclient.data.l[0] = XInternAtom(dpy, "WM_DELETE_WINDOW", False);
+    ev.xclient.data.l[1] = CurrentTime;
+
+    XSendEvent(dpy, selmon->sel->win, False, NoEventMask, &ev);
+
+    killrecursive(selmon->sel->pid);
+}
+
+void
+killrecursive(pid_t parent_pid)
+{
+    if (parent_pid <= 0)
+        return;
+
+    pid_t ppid;
+    char buf[256];
+    FILE *fp;
+
+    snprintf(buf, sizeof(buf), "/proc/%ld/stat", (long)parent_pid);
+    if (!(fp = fopen(buf, "r")))
+        return;
+
+    if (fscanf(fp, "%*d %*s %*c %ld", &ppid) == 1 && ppid != 1)
+        killrecursive(ppid);
+
+    fclose(fp);
+    kill(parent_pid, SIGKILL);
 }
 
 void
