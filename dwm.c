@@ -270,6 +270,7 @@ static void updatenumlockmask(void);
 static void updatesizehints(Client *c);
 static void updatestatus(void);
 static void updatetitle(Client *c);
+static void updatewindowtype(Client *c);
 static void updatewmhints(Client *c);
 static void view(const Arg *arg);
 static Client *wintoclient(Window w);
@@ -1375,6 +1376,7 @@ manage(Window w, XWindowAttributes *wa)
 	configure(c); /* propagates border_width, if size doesn't change */
 	if (getatomprop(c, netatom[NetWMState]) == netatom[NetWMFullscreen])
 		setfullscreen(c, 1);
+        updatewindowtype(c);
 	updatesizehints(c);
 	updatewmhints(c);
 	XSelectInput(dpy, w, EnterWindowMask|FocusChangeMask|PropertyChangeMask|StructureNotifyMask);
@@ -2706,6 +2708,18 @@ updatetitle(Client *c)
 		gettextprop(c->win, XA_WM_NAME, c->name, sizeof c->name);
 	if (c->name[0] == '\0') /* hack to mark broken clients */
 		strcpy(c->name, broken);
+}
+
+void
+updatewindowtype(Client *c)
+{
+        Atom state = getatomprop(c, netatom[NetWMState]);
+        Atom wtype = getatomprop(c, netatom[NetWMWindowType]);
+
+        if (state == netatom[NetWMFullscreen])
+        setfullscreen(c, 1);
+        if (wtype == netatom[NetWMWindowType])
+        c->isfloating = 1;
 }
 
 void
