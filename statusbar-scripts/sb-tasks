@@ -1,5 +1,7 @@
 #!/bin/sh
+
 # Signal 5
+
 # Originally by Andr3as07 <https://github.com/Andr3as07>
 # Some changes by Luke
 # Rebuild by Tenyun
@@ -18,3 +20,4 @@ esac
 
 [ "$num" != "0(0)" ] &&
 	echo "🤖$num"
+
