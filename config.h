@@ -7,9 +7,9 @@ static const int swallowfloating    = 0;        /* 1 means swallow floating wind
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[] = {
-		"sans-serif:size=16:hinting=true:antialias=true:autohint=false:hintstyle=hintnone:rgba=rgb:lcdfilter=lcdefault:fontformat=TrueType",
-		"OpenMoji:size=16:hinting=true:antialias=true:autohint=false:hintstyle=hintfull:rgba=rgb:lcdfilter=lcdefault:fontformat=TrueType"
-		"Material Design Icons Desktop:size=16:hinting=true:antialias=true:autohint=false:hintstyle=hintfull:rgba=rgb:lcdfilter=lcdefault:fontformat=TrueType"
+		"sans-serif:size=16:hinting=true:antialias=true:autohint=true",
+		"OpenMoji Color:size=16:antialias=true:autohint=true",
+		"Material Design Icons Desktop:size=16:hinting=true:antialias=true:autohint=true"
 };
 static const char dmenufont[]       = "sans-serif:size=16:hinting=true:antialias=true:autohint=false:hintstyle=hintnone:rgba=rgb:lcdfilter=lcdefault:fontformat=TrueType";
 /* colors */
@@ -32,7 +32,8 @@ static const Block blocks[] = {
 	{ col_white, "sb-clock",			1,		1},
 	{ col_white, "sb-volume",			1,		2},
 	{ col_white, "sb-memory",			1,		3},
-	{ col_white, "sb-cpu",		 		1,		4},
+	{ col_white, "sb-cpu",				1,		4},
+	{ col_white, "sb-tasks",			1,		5},
 /*	{ col_white, "sb-doppler",			0,		6},*/
 };
 
