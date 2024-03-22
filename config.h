@@ -113,8 +113,8 @@ static const char *roficmd[] = { "/home/justcausewhynot/.config/rofi/scripts/lau
 static const char *play_pausecmd[] = { "playerctl", "play-pause", NULL };
 static const char *previouscmd[] = { "playerctl", "previous", NULL };
 static const char *nextcmd[] = { "playerctl", "next", NULL };
-static const char *ffcmd[] = { "playerctl", "position", "15+", NULL };
-static const char *rrcmd[] = { "playerctl", "position", "15-", NULL };
+/*static const char *ffcmd[] = { "playerctl", "position", "15+", NULL };*/
+/*static const char *rrcmd[] = { "playerctl", "position", "15-", NULL };*/
 static const char *shiftplayercmd[] = { "playerctld", "shift", NULL };
 static const char *unshiftplayercmd[] = { "playerctld", "unshift", NULL };
 static const char *sxcs[]= { "sxc", NULL };
@@ -127,10 +127,10 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
 	{ 0,                            XK_Print,  spawn,          {.v = prtscrcmd } },
-	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = shiftplayercmd } },
-	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = unshiftplayercmd } },
-	{ MODKEY|ShiftMask,             XK_z,      spawn,          {.v = ffcmd } },
-	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = rrcmd } },
+	{ MODKEY|ShiftMask,             XK_z,      spawn,          {.v = shiftplayercmd } },
+	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = unshiftplayercmd } },
+	/*{ MODKEY|ShiftMask,             XK_z,      spawn,          {.v = ffcmd } },*/
+	/*{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = rrcmd } },*/
 	{ 0,                     XF86XK_AudioPlay, spawn,          {.v = play_pausecmd } },
 	{ 0,                     XF86XK_AudioPrev, spawn,          {.v = previouscmd } },
 	{ 0,                     XF86XK_AudioNext, spawn,          {.v = nextcmd } },
@@ -138,18 +138,18 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_n,      incnmaster,     {.i = +1 } },
+	{ MODKEY|ShiftMask,		XK_n,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_s,      movestack,      {.i = +1 } },
-	{ MODKEY,                       XK_w,      movestack,      {.i = -1 } },
+	{ MODKEY|ShiftMask,		XK_e,      movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,		XK_d,      movestack,      {.i = -1 } },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
         { MODKEY|Mod1Mask,              XK_c,      termclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_e,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,		XK_w,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ControlMask,           XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },

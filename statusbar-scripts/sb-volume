@@ -5,10 +5,10 @@
 # Prints the current volume or 🔇 if muted.
 
 case $BLOCK_BUTTON in
-	1) setsid -w -f "$TERMINAL" -e pulsemixer; pkill -RTMIN+10 "${STATUSBAR:-dwmblocks}" ;;
+	1) setsid -w -f "$TERMINAL" -e ncpamixer; pkill -RTMIN+10 "${STATUSBAR:-dwmblocks}" ;;
 	2) wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle ;;
-	4) wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ ;;
-	5) wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- ;;
+	4) wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ ;;
+	5) wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- ;;
 	3) notify-send "📢 Volume module" "\- Shows volume 🔊, 🔇 if muted.
 - Middle click to mute.
 - Scroll to change." ;;
