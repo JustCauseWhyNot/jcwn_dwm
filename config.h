@@ -52,15 +52,16 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title            tags mask  isfloating  isterminal  noswallow  monitor  isgame */
-	{ "Gimp",     NULL,       NULL,            0,         0,          0,           0,        -1 },
-	{ "Firefox",  NULL,       NULL,            1 << 8,    0,          0,          -1,        -1 },
-  { "kdeconnect.sms", NULL,       NULL,            1 << 5,    0,          0,           0,        -1 },
-	{ "st-direct",NULL,       NULL,            0,         0,          1,           0,        -1 },
-	{ "pavucontrol-qt",NULL,  NULL,            0,         0,          0,           0,         0 },
-	{ NULL,       NULL,       "Event Tester",  0,         0,          0,           1,        -1 },    /* xev */
-	{ "Steam",    NULL,       NULL,            0,            0,           -1,      0,         0,      1 },
-	{ "steam_app",NULL,       NULL,            0,            0,           -1,      0,         0,      1 },
+	/* class		instance		title		tags mask	isfloating	isterminal	noswallow	monitor		isgame */
+	{ "Gimp",		NULL,			NULL,		0,		0,		0,		0,		-1 },
+	{ "LibreWolf",		NULL,			NULL,		0,		0,		0,		-1,		-1 },
+	{ "Gimp",		NULL,			NULL,		0,		0,		0,		0,		-1 },
+	{ "kdeconnect.sms",	NULL,			NULL,		1 << 4,		0,		0,		0,		-1 },
+	{ "st-direct",		NULL,			NULL,		0,		0,		1,		0,		-1 },
+	{ "pavucontrol-qt",	NULL,			NULL,		0,		0,		0,		0,		-1 },
+	{ NULL,			NULL,			"Event Tester",	0,		0,		0,		1,		-1 },    /* xev */
+	{ "steam",		NULL,			NULL,		0,		0,		-1,		0,		-1,		1 },
+	{ "Steam_app",		NULL,			NULL,		1 << 1,		0,		-1,		0,		-1,		1 },
 };
 
 /* layout(s) */
