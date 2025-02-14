@@ -101,9 +101,9 @@ static const char *sxcs[]= { "sxc", NULL };
 static const char *xkillcmd[]= { "xkill", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *unshiftplayercmd[] = { "playerctld", "unshift", NULL };
-static const char *gpureplaystartcmd[] = { "$XDG_CONFIG/gpu-screen-recorder/start-replay.sh", NULL };
-static const char *gpureplaystopcmd[] = { "$XDG_CONFIG/gpu-screen-recorder/stop-replay.sh", NULL };
-static const char *gpureplaysavecmd[] = { "$XDG_CONFIG/gpu-screen-recorder/save-replay.sh", NULL };
+static const char *gpureplaystartcmd[] = { "$XDG_CONFIG_HOME/gpu-screen-recorder/start-replay.sh", NULL };
+static const char *gpureplaystopcmd[] = { "$XDG_CONFIG_HOME/gpu-screen-recorder/stop-replay.sh", NULL };
+static const char *gpureplaysavecmd[] = { "$XDG_CONFIG_HOME/gpu-screen-recorder/save-replay.sh", NULL };
 
 #include <X11/XF86keysym.h>
 static const Key keys[] = {
