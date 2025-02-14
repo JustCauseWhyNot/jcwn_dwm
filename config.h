@@ -145,8 +145,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY|Mod1Mask,              XK_Escape, spawn,          {.v = xkillcmd } },
 	{ MODKEY|Mod1Mask,              XK_1,      spawn,          {.v = gpureplaystartcmd } },
-	{ MODKEY|Mod1Mask,              XK_1,      spawn,          {.v = gpureplaystopcmd } },
-	{ MODKEY|Mod1Mask,              XK_2,      spawn,          {.v = gpureplaysavecmd } },
+	{ MODKEY|Mod1Mask,              XK_3,      spawn,          {.v = gpureplaystopcmd } },
+	{ MODKEY|Mod1Mask,              XK_1,      spawn,          {.v = gpureplaysavecmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
