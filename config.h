@@ -101,6 +101,9 @@ static const char *sxcs[]= { "sxc", NULL };
 static const char *xkillcmd[]= { "xkill", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *unshiftplayercmd[] = { "playerctld", "unshift", NULL };
+static const char *gpureplaystartcmd[] = { "$XDG_CONFIG/gpu-screen-recoder/start-replay.sh", NULL };
+static const char *gpureplaystopcmd[] = { "$XDG_CONFIG/gpu-screen-recoder/stop-replay.sh", NULL };
+static const char *gpureplaysavecmd[] = { "$XDG_CONFIG/gpu-screen-recoder/save-replay.sh", NULL };
 
 #include <X11/XF86keysym.h>
 static const Key keys[] = {
@@ -141,6 +144,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY|Mod1Mask,              XK_Escape, spawn,          {.v = xkillcmd } },
+	{ MODKEY|Mod1Mask,              XK_1,      spawn,          {.v = gpureplaystartcmd } },
+	{ MODKEY|Mod1Mask,              XK_1,      spawn,          {.v = gpureplaystopcmd } },
+	{ MODKEY|Mod1Mask,              XK_2,      spawn,          {.v = gpureplaysavecmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
