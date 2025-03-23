@@ -57,6 +57,7 @@ static const Rule rules[] = {
 	{ "LibreWolf",		NULL,			NULL,		0,		0,		0,		-1,		-1 },
 	{ "Gimp",		NULL,			NULL,		0,		0,		0,		0,		-1 },
 	{ "kdeconnect.sms",	NULL,			NULL,		1 << 4,		0,		0,		0,		-1 },
+	{ "obs",		NULL,			NULL,		1 << 4,		0,		0,		0,		-1 },
 	{ "st-direct",		NULL,			NULL,		0,		0,		1,		0,		-1 },
 	{ "pavucontrol-qt",	NULL,			NULL,		0,		0,		0,		0,		-1 },
 	{ NULL,			NULL,			"Event Tester",	0,		0,		0,		1,		-1 },    /* xev */
