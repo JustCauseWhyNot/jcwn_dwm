@@ -64,6 +64,8 @@ static const Rule rules[] = {
 	{ NULL,			NULL,			"Event Tester",	0,		0,		0,		1,		-1 },    /* xev */
 	{ "steam",		NULL,			NULL,		0,		0,		-1,		0,		-1,		1 },
 	{ "steam_app",		NULL,			NULL,		1 << 1,		0,		-1,		0,		-1,		1 },
+	{ "IronyModManager",		NULL,			NULL,		1 << 1,		0,		-1,		0,		-1,		1 },
+	{ "hoi4",		NULL,			NULL,		1 << 1,		0,		-1,		0,		-1,		1 },
 };
 
 /* layout(s) */
