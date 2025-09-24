@@ -56,16 +56,16 @@ static const Rule rules[] = {
 	{ "Gimp",		NULL,			NULL,		0,		0,		0,		0,		-1 },
 	{ "LibreWolf",		NULL,			NULL,		0,		0,		0,		-1,		-1 },
 	{ "Gimp",		NULL,			NULL,		0,		0,		0,		0,		-1 },
-	{ "kdeconnect.sms",	NULL,			NULL,		1 << 4,		0,		0,		0,		-1 },
-	{ "obs",		NULL,			NULL,		1 << 4,		0,		0,		0,		-1 },
+	{ "kdeconnect.sms",	NULL,			NULL,		1 << 4,		0,		0,		0,		1 },
+	{ "obs",		NULL,			NULL,		1 << 4,		0,		0,		0,		1 },
 	{ "qBittorrent",	NULL,			NULL,		1 << 5,		0,		0,		0,		-1 },
 	{ "st-direct",		NULL,			NULL,		0,		0,		1,		0,		-1 },
 	{ "pavucontrol-qt",	NULL,			NULL,		0,		0,		0,		0,		-1 },
 	{ NULL,			NULL,			"Event Tester",	0,		0,		0,		1,		-1 },    /* xev */
-	{ "steam",		NULL,			NULL,		0,		0,		-1,		0,		-1,		1 },
-	{ "steam_app",		NULL,			NULL,		1 << 1,		0,		-1,		0,		-1,		1 },
-	{ "IronyModManager",		NULL,			NULL,		1 << 1,		0,		-1,		0,		-1,		1 },
-	{ "hoi4",		NULL,			NULL,		1 << 1,		0,		-1,		0,		-1,		1 },
+	{ "steam",		NULL,			NULL,		0,		0,		-1,		0,		0,		1 },
+	{ "steam_app",		NULL,			NULL,		1 << 1,		0,		-1,		0,		0,		1 },
+	{ "IronyModManager",	NULL,			NULL,		1 << 1,		0,		-1,		0,		0,		1 },
+	{ "hoi4",		NULL,			NULL,		1 << 1,		0,		-1,		0,		0,		1 },
 };
 
 /* layout(s) */
