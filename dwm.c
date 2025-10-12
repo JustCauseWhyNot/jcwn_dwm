@@ -1498,6 +1498,7 @@ movemouse(const Arg *arg)
 	Client *c;
 	Monitor *m;
 	XEvent ev;
+	Time lasttime = 0;
 
 	if (!(c = selmon->sel))
 		return;
@@ -1803,6 +1804,7 @@ resizemouse(const Arg *arg)
 	Client *c;
 	Monitor *m;
 	XEvent ev;
+	Time lasttime = 0;
 
 	if (!(c = selmon->sel))
 		return;
