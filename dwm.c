@@ -885,7 +885,7 @@ drawbar(Monitor *m)
 		return;
 
 	/* draw status first so it can be overdrawn by tags later */
-	if (m == selmon) /* status is only drawn on selected monitor */
+	if (m == selmon || statusall) /* status is only drawn on selected monitor */
 		tw = getstatus(m->ww);
 
 	for (c = m->clients; c; c = c->next) {
@@ -2809,7 +2809,7 @@ updatesizehints(Client *c)
 void
 updatestatus(void)
 {
-	drawbar(selmon);
+	statusall ? drawbars() : drawbar(selmon);
 }
 
 void
