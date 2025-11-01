@@ -116,7 +116,7 @@ static const char *gsrreplaystopcmd[] = { "stop-replay", NULL };
 static const char *gsrreplaysavecmd[] = { "save-replay", NULL };
 static const char *gsrreplaysave10scmd[] = { "save-replay-10s", NULL };
 static const char *gsrreplaysave30scmd[] = { "save-replay-30s", NULL };
-static const char *gsrreplaysave1mcmd[] = { "save-replay-1m", NULL };
+static const char *gsrreplaysave60scmd[] = { "save-replay-60s", NULL };
 static const char *gsrreplaysave5mcmd[] = { "save-replay-5m", NULL };
 static const char *gsrreplaysave10mcmd[] = { "save-replay-10m", NULL };
 
@@ -165,7 +165,7 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_1,      spawn,          {.v = gsrreplaystopcmd } },
 	{ MODKEY|Mod1Mask,              XK_2,      spawn,          {.v = gsrreplaysave10scmd } },
 	{ MODKEY|Mod1Mask,              XK_3,      spawn,          {.v = gsrreplaysave30scmd } },
-	{ MODKEY|Mod1Mask,              XK_4,      spawn,          {.v = gsrreplaysave1mcmd } },
+	{ MODKEY|Mod1Mask,              XK_4,      spawn,          {.v = gsrreplaysave60scmd } },
 	{ MODKEY|Mod1Mask,              XK_5,      spawn,          {.v = gsrreplaysave5mcmd } },
 	{ MODKEY|Mod1Mask,              XK_6,      spawn,          {.v = gsrreplaysave10mcmd } },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_2,      spawn,          {.v = gsrreplaysavecmd } },
