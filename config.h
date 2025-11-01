@@ -166,9 +166,9 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask,              XK_2,      spawn,          {.v = gsrreplaysave10scmd } },
 	{ MODKEY|Mod1Mask,              XK_3,      spawn,          {.v = gsrreplaysave30scmd } },
 	{ MODKEY|Mod1Mask,              XK_4,      spawn,          {.v = gsrreplaysave1mcmd } },
+	{ MODKEY|Mod1Mask,              XK_5,      spawn,          {.v = gsrreplaysave5mcmd } },
+	{ MODKEY|Mod1Mask,              XK_6,      spawn,          {.v = gsrreplaysave10mcmd } },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_2,      spawn,          {.v = gsrreplaysavecmd } },
-	{ MODKEY|Mod1Mask|ShiftMask,    XK_3,      spawn,          {.v = gsrreplaysave5mcmd } },
-	{ MODKEY|Mod1Mask|ShiftMask,    XK_4,      spawn,          {.v = gsrreplaysave10mcmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
