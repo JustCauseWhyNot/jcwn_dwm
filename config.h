@@ -114,9 +114,10 @@ static const char *gsrrecordingreplaystartstopcmd[] = { "start-stop-recording-re
 static const char *gsrreplaystartcmd[] = { "start-replay", NULL };
 static const char *gsrreplaystopcmd[] = { "stop-replay", NULL };
 static const char *gsrreplaysavecmd[] = { "save-replay", NULL };
-static const char *gsrreplaysave10scmd[] = { "save-replay-10s", NULL };
-static const char *gsrreplaysave30scmd[] = { "save-replay-30s", NULL };
-static const char *gsrreplaysave60scmd[] = { "save-replay-60s", NULL };
+static const char *gsrreplaysave15scmd[] = { "save-replay-15s", NULL };
+static const char *gsrreplaysave45scmd[] = { "save-replay-45s", NULL };
+static const char *gsrreplaysave90scmd[] = { "save-replay-90s", NULL };
+static const char *gsrreplaysave3mcmd[] = { "save-replay-3m", NULL };
 static const char *gsrreplaysave5mcmd[] = { "save-replay-5m", NULL };
 static const char *gsrreplaysave10mcmd[] = { "save-replay-10m", NULL };
 
@@ -163,11 +164,12 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_1,      spawn,          {.v = gsrrecordingstartstopcmd } },
 	{ MODKEY|Mod1Mask,              XK_1,      spawn,          {.v = gsrreplaystartcmd } },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_1,      spawn,          {.v = gsrreplaystopcmd } },
-	{ MODKEY|Mod1Mask,              XK_2,      spawn,          {.v = gsrreplaysave10scmd } },
-	{ MODKEY|Mod1Mask,              XK_3,      spawn,          {.v = gsrreplaysave30scmd } },
-	{ MODKEY|Mod1Mask,              XK_4,      spawn,          {.v = gsrreplaysave60scmd } },
-	{ MODKEY|Mod1Mask,              XK_5,      spawn,          {.v = gsrreplaysave5mcmd } },
-	{ MODKEY|Mod1Mask,              XK_6,      spawn,          {.v = gsrreplaysave10mcmd } },
+	{ MODKEY|Mod1Mask,              XK_2,      spawn,          {.v = gsrreplaysave15scmd } },
+	{ MODKEY|Mod1Mask,              XK_3,      spawn,          {.v = gsrreplaysave45scmd } },
+	{ MODKEY|Mod1Mask,              XK_4,      spawn,          {.v = gsrreplaysave90scmd } },
+	{ MODKEY|Mod1Mask,              XK_5,      spawn,          {.v = gsrreplaysave3mcmd } },
+	{ MODKEY|Mod1Mask,              XK_6,      spawn,          {.v = gsrreplaysave5mcmd } },
+	{ MODKEY|Mod1Mask,              XK_7,      spawn,          {.v = gsrreplaysave10mcmd } },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_2,      spawn,          {.v = gsrreplaysavecmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
